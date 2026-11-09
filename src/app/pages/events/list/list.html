@@ -1,0 +1,11 @@
+<h1 class="text-5xl">Events</h1>
+@if (events$ | async; as response) {
+  <app-events-table [events]="response.data" />
+
+  <app-pagination
+    [totalPages]="response.pagination.totalPages"
+    [currentPage]="response.pagination.currentPage"
+    [limit]="response.pagination.pageSize"
+    (selectPage)="loadPage($event)"
+  />
+}

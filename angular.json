@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "schematicCollections": ["angular-eslint"]
   },
   "newProjectRoot": "projects",
   "projects": {
-    "undergrouund-events": {
+    "underground-events": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -24,9 +25,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/tailwind.css", "src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -56,16 +55,22 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "undergrouund-events:build:production"
+              "buildTarget": "underground-events:build:production"
             },
             "development": {
-              "buildTarget": "undergrouund-events:build:development"
+              "buildTarget": "underground-events:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     }

@@ -1,0 +1,43 @@
+<div class="overflow-hidden rounded-md border">
+  <div hlmTableContainer>
+    <table hlmTable>
+      <caption class="sr-only">
+        Events and their dates. Select an event name to view its details.
+      </caption>
+
+      <thead hlmTHead>
+        <tr hlmTr>
+          <th hlmTh scope="col">Name</th>
+          <th hlmTh scope="col" class="w-40">Date</th>
+          <th hlmTh scope="col">Registered people</th>
+        </tr>
+      </thead>
+
+      <tbody hlmTBody>
+        @for (event of events(); track event.id) {
+          <tr hlmTr>
+            <td hlmTd class="whitespace-normal">
+              <a
+                [routerLink]="['/events', event.id]"
+                class="font-medium underline underline-offset-4 hover:no-underline focus-visible:outline-1 focus-visible:outline-offset-4"
+              >
+                {{ event.name }}
+              </a>
+            </td>
+
+            <td hlmTd>
+              <time [attr.datetime]="event.date">
+                {{ event.date | date: 'dd/MM/yyyy' }}
+              </time>
+            </td>
+            <td hlmTd>{{ event.registrationCount }}</td>
+          </tr>
+        } @empty {
+          <tr hlmTr>
+            <td hlmTd colspan="3" class="h-24 text-center">No events found.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

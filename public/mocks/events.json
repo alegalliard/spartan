@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Under the Weight of Fog",
+    "date": "2026-10-03",
+    "bands": ["Ürütaü", "Slow Abyss", "Vigil"],
+    "createdAt": "2026-09-01T14:00:00Z",
+    "updatedAt": "2026-09-15T18:30:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 2,
+    "name": "Underground Ritual",
+    "date": "2026-10-10",
+    "bands": ["Lunar Sepulcher", "Black Shroud", "Desecration"],
+    "createdAt": "2026-09-02T10:00:00Z",
+    "updatedAt": "2026-10-12T16:00:00Z",
+    "deletedAt": "2026-10-12T16:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Rust and Distortion",
+    "date": "2026-10-17",
+    "bands": ["War Engine", "Dirty Steel", "Reactor"],
+    "createdAt": "2026-09-03T16:45:00Z",
+    "updatedAt": "2026-10-01T12:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 4,
+    "name": "Voices from the Crypt",
+    "date": "2026-11-15",
+    "bands": ["Funeral Lament", "Final Requiem"],
+    "createdAt": "2026-09-04T09:30:00Z",
+    "updatedAt": "2026-09-20T15:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 5,
+    "name": "Industrial Wasteland Massacre",
+    "date": "2026-11-21",
+    "bands": ["Urban Necrosis", "Jawbone", "Terminal State", "Body Dump"],
+    "createdAt": "2026-09-05T13:20:00Z",
+    "updatedAt": "2026-10-05T17:40:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 6,
+    "name": "Amplifier Saturday",
+    "date": "2026-11-28",
+    "bands": ["Cosmic Stone", "Electric Desert", "Saturn Sun"],
+    "createdAt": "2026-09-06T11:00:00Z",
+    "updatedAt": "2026-09-06T11:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 7,
+    "name": "Alliance of Steel",
+    "date": "2026-12-05",
+    "bands": ["Iron Fist", "Sentinel", "Savage Blade"],
+    "createdAt": "2026-09-07T18:00:00Z",
+    "updatedAt": "2026-10-10T14:25:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 8,
+    "name": "Night of the Damned",
+    "date": "2026-12-06",
+    "bands": ["Damnation", "Shadow Pact"],
+    "createdAt": "2026-09-08T12:15:00Z",
+    "updatedAt": "2026-10-12T16:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 9,
+    "name": "Noise Against Concrete",
+    "date": "2026-12-12",
+    "bands": ["Dead Concrete", "System Failure", "No Return", "Friction"],
+    "createdAt": "2026-09-09T15:30:00Z",
+    "updatedAt": "2026-09-25T10:45:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 10,
+    "name": "Dark Solstice",
+    "date": "2026-12-19",
+    "bands": ["Dark Forest", "Southern Winter", "Night Raven"],
+    "createdAt": "2026-09-10T08:00:00Z",
+    "updatedAt": "2026-10-15T19:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 11,
+    "name": "Ashes of the Old Year",
+    "date": "2026-12-26",
+    "bands": ["Slow Abyss", "Ashes of Tomorrow", "Vigil"],
+    "createdAt": "2026-09-11T17:10:00Z",
+    "updatedAt": "2026-09-11T17:10:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 12,
+    "name": "First Distortion",
+    "date": "2027-01-09",
+    "bands": ["Reactor", "War Engine"],
+    "createdAt": "2026-09-12T14:40:00Z",
+    "updatedAt": "2026-10-18T11:30:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 13,
+    "name": "Swamp of Riffs",
+    "date": "2027-01-16",
+    "bands": ["Sludge", "Acid Swamp", "Electric Desert"],
+    "createdAt": "2026-09-13T10:20:00Z",
+    "updatedAt": "2026-10-20T13:50:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 14,
+    "name": "Catacomb Gathering",
+    "date": "2027-01-23",
+    "bands": ["Body Dump", "Lunar Sepulcher", "Urban Necrosis", "Desecration"],
+    "createdAt": "2026-09-14T16:00:00Z",
+    "updatedAt": "2026-09-28T09:15:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 15,
+    "name": "Liturgy of the End",
+    "date": "2027-01-30",
+    "bands": ["Final Requiem", "Ürütaü", "Funeral Lament"],
+    "createdAt": "2026-09-15T11:45:00Z",
+    "updatedAt": "2026-10-21T18:20:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 16,
+    "name": "Midnight Assault",
+    "date": "2027-02-06",
+    "bands": ["Savage Blade", "Dirty Steel", "Jawbone"],
+    "createdAt": "2026-09-16T13:00:00Z",
+    "updatedAt": "2026-09-16T13:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 17,
+    "name": "Carnival of Shadows",
+    "date": "2027-02-13",
+    "bands": ["Black Shroud", "Shadow Pact", "Night Raven"],
+    "createdAt": "2026-09-17T09:10:00Z",
+    "updatedAt": "2026-10-22T15:35:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 18,
+    "name": "Psychedelic Orbit",
+    "date": "2027-02-20",
+    "bands": ["Saturn Sun", "Cosmic Stone"],
+    "createdAt": "2026-09-18T18:25:00Z",
+    "updatedAt": "2026-10-23T10:00:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 19,
+    "name": "Underground Resistance",
+    "date": "2027-02-27",
+    "bands": ["No Return", "Friction", "Terminal State", "System Failure"],
+    "createdAt": "2026-09-19T12:30:00Z",
+    "updatedAt": "2026-10-24T14:10:00Z",
+    "deletedAt": null
+  },
+  {
+    "id": 20,
+    "name": "Procession of the Forgotten",
+    "date": "2027-03-06",
+    "bands": ["Damnation", "Ashes of Tomorrow", "Southern Winter"],
+    "createdAt": "2026-09-20T15:00:00Z",
+    "updatedAt": "2026-10-25T17:45:00Z",
+    "deletedAt": null
+  }
+]

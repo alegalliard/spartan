@@ -1,0 +1,22 @@
+<div hlmSidebarWrapper>
+  <hlm-sidebar>
+    <div hlmSidebarContent>
+      <div hlmSidebarGroup>
+        <div hlmSidebarGroupLabel>Underground Shows</div>
+        <div hlmSidebarGroupContent>
+          <ul hlmSidebarMenu>
+            @for (item of _items; track item.title) {
+              <li hlmSidebarMenuItem>
+                <a hlmSidebarMenuButton [href]="item.url">
+                  <ng-icon [name]="item.icon" />
+                  <span>{{ item.title }}</span>
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </hlm-sidebar>
+  <ng-content />
+</div>

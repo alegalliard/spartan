@@ -1,0 +1,33 @@
+<div class="overflow-hidden rounded-md border">
+  <div hlmTableContainer>
+    <table hlmTable>
+      <caption class="sr-only">
+        Registered people and their contact information.
+      </caption>
+      <thead hlmTHead>
+        <tr hlmTr>
+          <th hlmTh scope="col">Name</th>
+          <th hlmTh scope="col">Email</th>
+          <th hlmTh scope="col">Age</th>
+          <th hlmTh scope="col">City</th>
+          <th hlmTh scope="col">State</th>
+        </tr>
+      </thead>
+      <tbody hlmTBody>
+        @for (person of registrations(); track person.id) {
+          <tr hlmTr>
+            <td hlmTd class="whitespace-normal font-medium">{{ person.name }}</td>
+            <td hlmTd>{{ person.email }}</td>
+            <td hlmTd>{{ age(person.birthdate) }}</td>
+            <td hlmTd>{{ person.city }}</td>
+            <td hlmTd>{{ person.state }}</td>
+          </tr>
+        } @empty {
+          <tr hlmTr>
+            <td hlmTd colspan="5" class="h-24 text-center">No registrations found.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

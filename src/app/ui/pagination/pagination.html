@@ -1,0 +1,74 @@
+@if (totalPages() > 1) {
+  <div class="py-5">
+    <small class="mb-1 block text-center"> Page {{ currentPage() }} of {{ totalPages() }} </small>
+
+    <nav class="flex flex-wrap items-center justify-center gap-2" aria-label="Pagination">
+      <div hlmButtonGroup>
+        <button
+          type="button"
+          hlmBtn
+          variant="outline"
+          aria-label="Go to first page"
+          [disabled]="!hasPreviousPage()"
+          (click)="selectPage.emit(1)"
+        >
+          First
+        </button>
+
+        <button
+          type="button"
+          hlmBtn
+          variant="outline"
+          aria-label="Go to previous page"
+          [disabled]="!hasPreviousPage()"
+          (click)="selectPage.emit(currentPage() - 1)"
+        >
+          <ng-icon aria-hidden="true" name="lucideArrowLeft" />
+        </button>
+      </div>
+
+      <div hlmButtonGroup class="hidden sm:inline-flex">
+        @for (page of pages(); track page) {
+          @if (page === 'start-ellipsis' || page === 'end-ellipsis') {
+            <span class="inline-flex items-center justify-center px-3" aria-hidden="true"> … </span>
+          } @else {
+            <button
+              type="button"
+              hlmBtn
+              [variant]="page === currentPage() ? 'default' : 'outline'"
+              [attr.aria-label]="'Go to page ' + page"
+              [attr.aria-current]="page === currentPage() ? 'page' : null"
+              (click)="page !== currentPage() && selectPage.emit(page)"
+            >
+              {{ page }}
+            </button>
+          }
+        }
+      </div>
+
+      <div hlmButtonGroup>
+        <button
+          type="button"
+          hlmBtn
+          variant="outline"
+          aria-label="Go to next page"
+          [disabled]="!hasNextPage()"
+          (click)="selectPage.emit(currentPage() + 1)"
+        >
+          <ng-icon aria-hidden="true" name="lucideArrowRight" />
+        </button>
+
+        <button
+          type="button"
+          hlmBtn
+          variant="outline"
+          aria-label="Go to last page"
+          [disabled]="!hasNextPage()"
+          (click)="selectPage.emit(totalPages())"
+        >
+          Last
+        </button>
+      </div>
+    </nav>
+  </div>
+}

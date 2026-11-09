@@ -1,0 +1,122 @@
+<a routerLink="/events" class="mb-6 inline-block underline underline-offset-4">Back to events</a>
+@let view = state();
+@if (view.status === 'loading') {
+  <p role="status">Loading event…</p>
+} @else if (view.status === 'error') {
+  <p role="alert">Unable to load this event. Please try again later.</p>
+} @else if (view.status === 'ready' && view.details; as details) {
+  <h1 class="mb-6 text-4xl font-semibold">{{ details.event.name }}</h1>
+  <div class="grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <section aria-labelledby="event-heading" class="min-w-0 rounded-md border p-5">
+      <h2 id="event-heading" class="mb-4 text-xl font-semibold">Event details</h2>
+      <dl class="space-y-4">
+        <div>
+          <dt class="text-sm text-muted-foreground">Date</dt>
+          <dd>
+            <time [attr.datetime]="details.event.date">{{
+              details.event.date | date: 'dd/MM/yyyy'
+            }}</time>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-muted-foreground">Bands</dt>
+          <dd>
+            <ul>
+              @for (band of details.event.bands; track $index) {
+                <li>{{ band }}</li>
+              } @empty {
+                <li>No bands listed.</li>
+              }
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-muted-foreground">Registered people</dt>
+          <dd>{{ details.registrations.length }}</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-muted-foreground">Created at</dt>
+          <dd>{{ details.event.createdAt | date: 'dd/MM/yyyy HH:mm' }}</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-muted-foreground">Updated at</dt>
+          <dd>{{ details.event.updatedAt | date: 'dd/MM/yyyy HH:mm' }}</dd>
+        </div>
+      </dl>
+    </section>
+    <section aria-labelledby="people-heading" class="min-w-0 rounded-md border p-5">
+      <h2 id="people-heading" class="mb-4 text-xl font-semibold">Registered people</h2>
+      <ul class="space-y-2">
+        @for (person of details.registrations; track person.id) {
+          <li>
+            <button
+              type="button"
+              class="w-full rounded-md border px-3 py-2 text-left hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2"
+              [class.bg-muted]="selectedId() === person.id"
+              [attr.aria-pressed]="selectedId() === person.id"
+              aria-controls="person-details"
+              (click)="selectedId.set(person.id)"
+            >
+              {{ person.name }}
+            </button>
+          </li>
+        } @empty {
+          <li>No registered people.</li>
+        }
+      </ul>
+    </section>
+    <section
+      id="person-details"
+      aria-labelledby="person-heading"
+      aria-live="polite"
+      class="min-w-0 rounded-md border p-5 md:col-span-2 xl:col-span-1"
+    >
+      <h2 id="person-heading" class="mb-4 text-xl font-semibold">Person details</h2>
+      @if (selectedPerson(); as person) {
+        <h3 class="mb-4 text-lg font-medium">{{ person.name }}</h3>
+        <dl class="space-y-4">
+          <div>
+            <dt class="text-sm text-muted-foreground">CPF</dt>
+            <dd>{{ person.CPF }}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">Email</dt>
+            <dd class="break-all">
+              <a [href]="'mailto:' + person.email" class="underline underline-offset-4">{{
+                person.email
+              }}</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">Birthdate</dt>
+            <dd>{{ person.birthdate | date: 'dd/MM/yyyy' }}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">City</dt>
+            <dd>{{ person.city }}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">State</dt>
+            <dd>{{ person.state }}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">Country</dt>
+            <dd>{{ person.country }}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">Created at</dt>
+            <dd>{{ person.createdAt | date: 'dd/MM/yyyy HH:mm' }}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-muted-foreground">Updated at</dt>
+            <dd>{{ person.updatedAt | date: 'dd/MM/yyyy HH:mm' }}</dd>
+          </div>
+        </dl>
+      } @else {
+        <p class="text-muted-foreground">Select a person to view their details.</p>
+      }
+    </section>
+  </div>
+} @else {
+  <h1 class="text-4xl">Event not found</h1>
+}

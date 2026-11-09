@@ -1,6 +1,26 @@
-# UndergrouundEvents
+# undergroundEvents
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.4.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.6.
+
+## Angular compatibility
+
+Validated against the stable releases available on 2026-11-09:
+
+- Angular framework and compiler: 22.2.5.
+- Angular CLI, build tooling and CDK: 22.2.6.
+- TypeScript 6.0.x and Vitest 5.x, compatible with the Angular build tooling.
+
+The app uses standalone components, signal inputs/outputs, built-in control flow,
+`inject()` and zoneless change detection. Tests use the Angular CLI Vitest builder,
+`TestBed`, `HttpTestingController` and `RouterTestingHarness`.
+
+Use `npm ci` to install the versions recorded in `package-lock.json`, then validate:
+
+```bash
+npm test -- --watch=false
+npm run build
+npm run lint
+```
 
 ## Development server
 
